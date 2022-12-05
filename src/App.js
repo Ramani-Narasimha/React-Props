@@ -1,15 +1,31 @@
 //import ClassComponent from './Class Component'
-import FuncProps from  './FuncProps'
+/*import FuncProps from  './FuncProps'
 import StateExample from './StateExample'
 import DemoExample from './DemoExample'
 import Events from './Events'
-import JSX from './JSX'
+import JSX from './JSX'*/
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Navbar from './components/Navbar'
+import NotFound from './components/NotFound'
 
 function App(){
   return(
       <div>
-      <StateExample/>
-      {/*<JSX/>
+        <BrowserRouter>
+          <Navbar/>
+          <Routes>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/about" element={<About/>}/>
+              <Route path="/contact" element={<Contact/>}/>
+              <Route path="*" element={<NotFound/>}/>
+          </Routes>
+        </BrowserRouter>
+
+       {/*<StateExample/>
+      <JSX/>
       <DemoExample price="1st price"/>
       <Events/>
       <FuncProps carname="audi" year="1998"/>
@@ -24,6 +40,7 @@ function App(){
              <ClassComponent/> 
 
       </section>*/}
+
       </div>
       
     )
